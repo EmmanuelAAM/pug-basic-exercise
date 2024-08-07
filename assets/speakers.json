@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Ana Applgate",
+    "role": "Chief Executive Officer",
+    "company": "Veeam Software",
+    "imageUrl": "./assets/1.png"
+  },
+  {
+    "name": "Shauna Le Noir",
+    "role": "Chief Strategist",
+    "company": "Azure",
+    "imageUrl": "./assets/2.png"
+  },
+  
+  {
+    "name": "Alina McKey",
+    "role": "Chief Strategist",
+    "company": "Cloud Native",
+    "imageUrl": "./assets/3.png"
+  }
+]

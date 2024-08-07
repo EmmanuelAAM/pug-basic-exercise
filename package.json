@@ -1,0 +1,21 @@
+{
+  "name": "veem",
+  "version": "1.0.0",
+  "description": "Veeam Software - Test task - Emmanuel Acuna Mora",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch styles/main.scss:styles/index.css",
+    "pug": "pug views/index.pug --out ./ --watch",
+    "start": "node index.js",
+    "dev": "npm-run-all --parallel sass pug start"
+  },
+  "author": "Emmanuel Acuna Mora",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2",
+    "npm-run-all": "^4.1.5",
+    "pug": "^3.0.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.77.8"
+  }
+}

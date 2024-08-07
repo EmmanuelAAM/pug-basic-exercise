@@ -1,0 +1,17 @@
+extends ./base
+block mainContent
+  main
+      .page-title
+          h1.bold Spotlight Speakers
+          .bounce-mark
+      .container-profiles
+          each speaker in speakers
+              .profile-container(onClick=`openModal(${JSON.stringify(speaker)})`)
+                  .col
+                      .picture-boxes
+                          .notched-box.p-absolute
+                          .profile-pic.p-relative(style=`background: url(${speaker.imageUrl}) no-repeat center center; background-size: contain;`)
+                  .profile-detail
+                      p.bold=speaker.name
+                      p.info-text=speaker.role
+                      p.info-text=speaker.company

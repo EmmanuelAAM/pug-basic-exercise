@@ -1,0 +1,182 @@
+$main-box-color: #00D15F;
+$secondary-text-color: #505861;
+$dialog-background-color: #232323;
+
+body{
+    font-family: Tahoma, sans-serif;
+    margin: 0px;
+}
+
+main{
+    margin-top: 65px;
+    margin: 0 10vh 0 10vh 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $dialog-background-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $main-box-color;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $main-box-color;
+}
+
+.flex {
+    display: flex;
+}
+
+.bold{
+    font-weight: bold;
+}
+.col {
+    @extend .flex;
+    flex-direction: column;
+}
+
+.bounce-mark {
+    background: url('../assets/Bounce mark.svg') no-repeat center center;
+    opacity: 0.2;
+    height: 0.5rem;
+}
+
+.info-text {
+    font-size: x-small;
+    margin-top: 0px;
+    color: $secondary-text-color;
+}
+
+.row {
+    @extend .flex;
+    flex-direction: row;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.picture-boxes {
+    @extend .flex;
+    justify-content: center;
+}
+
+.profile-container{
+ margin: 1.5rem;
+ cursor: pointer;
+}
+
+.profile-detail{
+    @extend .col;
+    text-align: center;
+}
+
+.page-title{
+    @extend .flex;
+    @extend .col;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-profiles{
+    @extend .flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.notched-box{
+        background-color: $main-box-color;
+        clip-path: polygon(0 20%,
+                    0 0,
+                    90% 0,
+                    100% 10%,
+                    100% 100%,
+                    90% 100%,
+                    10% 100%,
+                    0% 90%);
+        height: 10rem;
+        overflow: hidden;
+        width: 10rem;
+}
+
+.profile-pic {
+    @extend .notched-box;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+dialog {
+    background-color: $dialog-background-color;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+    color: white;
+    height: 65vh;
+    width: 45vw;
+    padding: 0px;
+    position: fixed;
+    top: 5rem;
+}
+
+.modal-background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    opacity: 65%;
+    background-color: $dialog-background-color;
+}
+
+.dialog-header {
+    @extend .row;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, rgb(73, 49, 120), darkorchid) 1;
+    padding: 1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content: space-between;
+}
+
+.dialog-detail-name{
+    margin: 0px;
+    font-size: medium;
+}
+
+
+.dialog-content{
+    @extend .col;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.dialog-description{
+    margin: 0px;
+}
+
+.dialog-close-button{
+    background-color: $dialog-background-color;
+    border: unset;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
