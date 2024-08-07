@@ -65,6 +65,10 @@ main{
     position: relative;
 }
 
+.p-fixed {
+    position: fixed;
+}
+
 .picture-boxes {
     @extend .flex;
     justify-content: center;
@@ -128,6 +132,13 @@ dialog {
     padding: 0px;
     position: fixed;
     top: 5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    dialog {
+        height: 65vh;
+        width: 65vw;
+    }
 }
 
 .modal-background{

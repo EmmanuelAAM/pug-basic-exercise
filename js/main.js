@@ -1,25 +1,46 @@
 function getElement() {
     const modal = document.getElementById('modal');
     const modalBackground = document.getElementById('modal-background');
-    let nameSection = document.getElementsByClassName('dialog-detail-name');
-    if (nameSection.length > 0) {
-        nameSection = nameSection[0];
+    let nameSection = document.getElementById('dialog-detail-name');
+    return { modal, modalBackground, nameSection };
+}
+
+function handleScrollPage(enable = true) {
+    const onScrollDisable = () => {
+        scrollTop =
+            window.scrollY ||
+            document.documentElement.scrollTop;
+        scrollLeft =
+            window.scrollX ||
+            document.documentElement.scrollLeft,
+            window.scrollTo(scrollLeft, scrollTop);
     }
-    return { modal, modalBackground, nameSection }
+    if (!enable) {
+        window.onscroll = onScrollDisable();
+        return;
+    }
+    window.onscroll = null;
 }
 function openModal(speaker) {
     const { modal, modalBackground, nameSection } = getElement();
-    if (modal && modalBackground && nameSection) {
-        nameSection.innerHTML = `<p>${speaker.name}</p>`;
-        modal.classList.remove('hidden');
-        modalBackground.classList.remove('hidden');
-        return;
-    }
-    console.error('Error: no modal avaiable');
+    nameSection.innerHTML = `<p>${speaker.name}</p>`;
+    modal.classList.remove('hidden');
+    handleScrollPage(false);
+    modalBackground.classList.remove('hidden');
+    scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop;
+    scrollLeft =
+        window.scrollX ||
+        document.documentElement.scrollLeft;
+    window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
 }
 
 function closeModal() {
     const { modal, modalBackground } = getElement();
     modal.classList.add('hidden');
+    handleScrollPage();
     modalBackground.classList.add('hidden');
 }
